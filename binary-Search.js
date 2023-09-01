@@ -1,7 +1,7 @@
 'use strict';
 
 const arr = [4, 8, 45, 95, 108, 109, 124, 145, 210];                                                // массив для поиска
-let desired_element = 145;                                                                          // элемент, который необходимо найти
+let desired_element = 95;                                                                           // элемент, который необходимо найти
 
 function binary_search(array, item) {                                                               // бинарный поиск
     let first_element = 0;                                                                          // первый элемент 
@@ -25,9 +25,9 @@ function binary_search(array, item) {                                           
         }
 
         if (item < array[middle_element]) {                                                         // * если элемент меньше среднего
-            last_element = middle_element - 1;                                                      // то отсекаем правую часть массива
+            last_element = middle_element--;                                                        // то отсекаем правую часть массива
         } else {                                                                                    // * если элемент больше среднего
-            first_element = middle_element + 1;                                                     // то отсекаем левую часть массива
+            first_element = middle_element++;                                                       // то отсекаем левую часть массива
         }
     }
 
@@ -35,4 +35,4 @@ function binary_search(array, item) {                                           
     return item_position;                                                                           // вернуть - ничего не найдено
 }
 
-binary_search(arr, desired_element);
+binary_search(arr, desired_element);                                                                // запустить выполнение
